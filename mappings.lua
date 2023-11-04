@@ -19,19 +19,46 @@ return {
     -- },
 
     -- mappings seen under group name "Buffer"
-    ["<leader>bD"] = {
-      function()
-        require("astronvim.utils.status").heirline.buffer_picker(
-          function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
-        )
-      end,
-      desc = "Pick to close",
+    -- ["<leader>bD"] = {
+    --   function()
+    --     require("astronvim.utils.status").heirline.buffer_picker(
+    --       function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
+    --     )
+    --   end,
+    --   desc = "Pick to close",
+    -- },
+    -- -- tables with the `name` key will be registered with which-key if it's installed
+    -- -- this is useful for naming menus
+    -- ["<leader>b"] = { name = "Buffers" },
+
+    -- TreesJ
+    ["tj"] = { ":TSJJoin<CR>", desc = "Join code block" },
+    ["ts"] = { ":TSJSplit<CR>", desc = "Split code block" },
+    ["tt"] = { ":TSJToggle<CR>", desc = "Split or join code block with autodetect" },
+    ["t"] = { name = "TreesJ" },
+
+    -- Neotest
+    ["<leader>TT"] = {
+      function() require("neotest").run.run { vim.fn.expand "%", strategy = "dap" } end,
+      desc = "Tests in file via DAP",
     },
-    -- tables with the `name` key will be registered with which-key if it's installed
-    -- this is useful for naming menus
-    ["<leader>b"] = { name = "Buffers" },
-    -- quick save
-    -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<leader>Tt"] = {
+      function() require("neotest").run.run { vim.fn.expand "%", strategy = "dap" } end,
+      desc = "Nearest test via DAP",
+    },
+    ["<leader>Tl"] = {
+      function() require("neotest").run.run_last() end,
+      desc = "Re-run last test",
+    },
+    ["<leader>Ts"] = {
+      function() require("neotest").summary.toggle() end,
+      desc = "Toggle summary",
+    },
+    ["<leader>T"] = { name = "Neotest" },
+
+    -- Misc. mappings
+    ["aj"] = { "i<cr><esc>w", desc = "Move word to next line" },
+    ["<CR>"] = { ":noh<CR>", desc = "Toggle search highlighting" },
   },
   t = {
     -- setting a mapping to false will disable it

@@ -18,7 +18,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "astrodark",
+  colorscheme = "astromars",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -81,5 +81,15 @@ return {
     --     ["~/%.config/foo/.*"] = "fooscript",
     --   },
     -- }
+    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+      signs = {
+        severity_limit = "Warning",
+      },
+      virtual_text = {
+        severity_limit = "Warning",
+      },
+    })
+
+    require("dap-python").resolve_python = function() return "/absolute/path/to/python" end
   end,
 }
