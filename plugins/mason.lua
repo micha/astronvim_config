@@ -10,7 +10,6 @@ return {
         "clojure_lsp",
         "lua_ls",
         "pyright",
-        "pylsp",
         "tsserver",
         "vimls",
       })

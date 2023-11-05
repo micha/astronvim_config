@@ -90,6 +90,8 @@ return {
       },
     })
 
-    require("dap-python").resolve_python = function() return "/absolute/path/to/python" end
+    local component = {
+      provider = require("astronvim.utils.status").provider.mode_text { padding = { left = 1, right = 1 } },
+    }
   end,
 }
