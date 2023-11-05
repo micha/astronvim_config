@@ -65,8 +65,8 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
-      "nvim-neotest/neotest-python",
-      "nvim-neotest/neotest-vim-test",
+      -- "nvim-neotest/neotest-python",
+      -- "nvim-neotest/neotest-vim-test",
     },
     config = function()
       require("neotest").setup {
@@ -95,7 +95,13 @@ return {
     "folke/flash.nvim",
     event = "VeryLazy",
     ---@type Flash.Config
-    opts = {},
+    config = function()
+      require("flash").setup {
+        modes = {
+          search = { enabled = false },
+        },
+      }
+    end,
     -- stylua: ignore
     keys = {
       { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },

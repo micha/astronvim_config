@@ -12,6 +12,7 @@ return {
         "pyright",
         "tsserver",
         "vimls",
+        "jsonls",
       })
     end,
   },
