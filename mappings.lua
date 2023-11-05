@@ -35,9 +35,9 @@ return {
     -- ["<leader>b"] = { name = "Buffers" },
 
     -- TreesJ
-    ["tj"] = { ":TSJJoin<CR>", desc = "Join code block" },
-    ["ts"] = { ":TSJSplit<CR>", desc = "Split code block" },
-    ["tt"] = { ":TSJToggle<CR>", desc = "Split or join code block with autodetect" },
+    ["tj"] = { "<CMD>TSJJoin<CR>", desc = "Join code block" },
+    ["ts"] = { "<CMD>TSJSplit<CR>", desc = "Split code block" },
+    ["tt"] = { "<CMD>TSJToggle<CR>", desc = "Split or join code block with autodetect" },
     ["t"] = { name = "TreesJ" },
 
     -- Neotest
@@ -95,6 +95,6 @@ return {
   },
   t = {
     -- setting a mapping to false will disable it
-    ["<esc>"] = false,
+    -- ["<esc>"] = { "<C-\\><C-N>", desc = "exit insert mode" },
   },
 }
