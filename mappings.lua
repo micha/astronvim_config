@@ -91,10 +91,26 @@ return {
 
     -- Misc. mappings
     ["aj"] = { "i<cr><esc>w", desc = "Move word to next line" },
-    ["<CR>"] = { ":noh<CR>", desc = "Toggle search highlighting" },
+    ["<cr>"] = { ":noh<cr>", desc = "Toggle search highlighting" },
+    ["<c-space>"] = { function() require("telescope.builtin").buffers() end, desc = "Find buffers" },
+    ["<c-t>"] = { ":ToggleTermToggleAll<cr>", desc = "ToggleTerm toggle all" },
+
+    -- Disabled mappings
+    ["<leader>tl"] = false,
+    ["<leader>tn"] = false,
+    ["<leader>tp"] = false,
+    ["<leader>tt"] = false,
+    ["<leader>tu"] = false,
+  },
+  v = {
+    ["<c-t>"] = {
+      ":ToggleTermSendVisualSelection<cr>",
+      desc = "ToggleTerm send visual selection",
+    },
   },
   t = {
-    -- setting a mapping to false will disable it
-    -- ["<esc>"] = { "<C-\\><C-N>", desc = "exit insert mode" },
+    -- ToggleTerm
+    ["<esc>"] = { "<c-\\><c-n>", desc = "ToggleTerm exit insert mode" },
+    ["<c-t>"] = { "<c-\\><c-n>:ToggleTermToggleAll<cr>", desc = "ToggleTerm toggle all" },
   },
 }

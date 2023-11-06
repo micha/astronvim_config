@@ -65,8 +65,18 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
-      -- "nvim-neotest/neotest-python",
-      -- "nvim-neotest/neotest-vim-test",
+      {
+        "nvim-neotest/neotest-python",
+        opts = {
+          dap = { justMyCode = false },
+        },
+      },
+      {
+        "nvim-neotest/neotest-vim-test",
+        opts = {
+          ignore_file_types = { "python", "vim", "lua" },
+        },
+      },
     },
     config = function()
       require("neotest").setup {
@@ -77,18 +87,6 @@ return {
         },
       }
     end,
-  },
-  {
-    "nvim-neotest/neotest-python",
-    opts = {
-      dap = { justMyCode = false },
-    },
-  },
-  {
-    "nvim-neotest/neotest-vim-test",
-    opts = {
-      ignore_file_types = { "python", "vim", "lua" },
-    },
   },
   { "nvim-neotest/neotest-plenary" },
   {
@@ -110,5 +108,22 @@ return {
       { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
       { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
     },
+  },
+  {
+    "echasnovski/mini.nvim",
+    config = function() require("mini.files").setup() end,
+    keys = {
+      { "-", mode = { "n" }, function() MiniFiles.open() end, desc = "Open MiniFiles" },
+    },
+  },
+  { "kevinhwang91/nvim-bqf", ft = "qf" },
+  {
+    "tummetott/unimpaired.nvim",
+    event = "VeryLazy",
+    config = function() require("unimpaired").setup {} end,
+  },
+  {
+    "kchmck/vim-coffee-script",
+    event = "VeryLazy",
   },
 }

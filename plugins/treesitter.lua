@@ -6,6 +6,7 @@ return {
       "lua",
       "typescript",
       "clojure",
+      "python",
     })
   end,
 }
