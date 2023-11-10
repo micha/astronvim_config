@@ -37,6 +37,7 @@ return {
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           -- "python",
+          "typescript",
         },
       },
       disabled = { -- disable formatting capabilities for the listed language servers
@@ -89,9 +90,5 @@ return {
         severity_limit = "Warning",
       },
     })
-
-    local component = {
-      provider = require("astronvim.utils.status").provider.mode_text { padding = { left = 1, right = 1 } },
-    }
   end,
 }

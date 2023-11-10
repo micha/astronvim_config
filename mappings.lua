@@ -93,7 +93,6 @@ return {
     ["aj"] = { "i<cr><esc>w", desc = "Move word to next line" },
     ["<cr>"] = { ":noh<cr>", desc = "Toggle search highlighting" },
     ["<c-space>"] = { function() require("telescope.builtin").buffers() end, desc = "Find buffers" },
-    ["<c-t>"] = { ":ToggleTermToggleAll<cr>", desc = "ToggleTerm toggle all" },
 
     -- Disabled mappings
     ["<leader>tl"] = false,

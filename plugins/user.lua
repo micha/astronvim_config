@@ -52,11 +52,6 @@ return {
     end,
   },
   {
-    "julienvincent/nvim-paredit",
-    config = function() require("nvim-paredit").setup {} end,
-    ft = { "clojure" },
-  },
-  {
     "mfussenegger/nvim-dap-python",
     config = function() require("dap-python").setup "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python" end,
   },
@@ -124,6 +119,22 @@ return {
   },
   {
     "kchmck/vim-coffee-script",
+    event = "VeryLazy",
+  },
+  {
+    "micha/vim-gnupg",
+    event = "VeryLazy",
+  },
+  {
+    "guns/vim-sexp",
+    ft = { "clojure" },
+  },
+  {
+    "tpope/vim-sexp-mappings-for-regular-people",
+    ft = { "clojure" },
+  },
+  {
+    "tpope/vim-repeat",
     event = "VeryLazy",
   },
 }
